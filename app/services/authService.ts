@@ -69,7 +69,7 @@ export const signupDriver = async (
   try {
     console.log("Driver signup:", name, email);
 
-    const response = await fetch(`${BASE_URL}/signup/driver`, {
+    const response = await fetch(`${BASE_URL}/api/auth/signup/driver`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ export const signupCustomer = async (
   try {
     console.log("Customer signup:", name, email);
 
-    const response = await fetch(`${BASE_URL}/signup/customer`, {
+    const response = await fetch(`${BASE_URL}/api/auth/signup/driver`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
