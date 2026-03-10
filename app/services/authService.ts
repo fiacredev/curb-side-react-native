@@ -141,7 +141,7 @@ export const signupCustomer = async (
   try {
     console.log("Customer signup:", name, email);
 
-    const response = await fetch(`${BASE_URL}/api/auth/signup/driver`, {
+    const response = await fetch(`${BASE_URL}/api/auth/signup/customer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

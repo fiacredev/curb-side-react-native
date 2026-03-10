@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { TextInput, Button, Title } from "react-native-paper";
 import { signupDriver } from "../services/authService";
+import { useRouter } from "expo-router";
 
 const DriverSignupScreen = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const router = useRouter();
 
   const handleSignup = async () => {
     try {
       const result = await signupDriver(name, email, password);
+      router.push("/screens/DriverLoginScreen");
       console.log(result);
     } catch (err: any) {
       console.error(err);

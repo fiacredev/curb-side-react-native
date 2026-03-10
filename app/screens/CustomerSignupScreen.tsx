@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { signupCustomer} from "../services/authService";
+import { useRouter } from "expo-router";
 
 const CustomerSignupScreen = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const router = useRouter();
 
   const handleSignup = async () => {
     try {
       const result = await signupCustomer(name, email, password);
+      router.push("/screens/CustomerLoginScreen")
       console.log(result);
     } catch (err: any) {
       console.error(err);
